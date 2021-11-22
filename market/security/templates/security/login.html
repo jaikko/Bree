@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'security/css/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'security/js/login.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script>
+    </script>
+</head>
+
+<body>
+    <div class="img-container">
+        <img src="{% static 'security/img/logo.png' %}">
+    </div>
+    <form autocomplete='off' class='form'>
+        {% csrf_token %}
+        <div class='control block-cube block-input'>
+            <input name='email' placeholder='Email' type='text'>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+        <div class='control block-cube block-input'>
+            <input name='password' placeholder='Password' type='password'>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+        <button class='btn block-cube block-cube-hover' type='button'>
+          <div class='bg-top'>
+            <div class='bg-inner'></div>
+          </div>
+          <div class='bg-right'>
+            <div class='bg-inner'></div>
+          </div>
+          <div class='bg'>
+            <div class='bg-inner'></div>
+          </div>
+          <div class='text'>
+            Se connecter
+          </div>
+        </button>
+        <div class="content-end">
+            <div class='add-text'>
+                <a href='https://codepen.io/marko-zub/' target='_blank'>Mot de passe oublié?</a>
+            </div>
+            <div class='add-text'>
+                <a href="{% url 'security:signup' %}" target='_blank'>S'inscrire</a>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>
