@@ -10,8 +10,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
     <script src="{% static 'store/js/index.js' %}"></script>
+    <script src="{% static 'store/js/menu.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'store/css/index.css' %}">
 
 </head>
@@ -59,11 +61,9 @@
                                 {% with elem.image|slugify as image_path %} {% with 'store/img/'|add:image_path|add:'.jpg' as image_path %}
                                 <img src="{% static image_path %}"> {% endwith %} {% endwith %}
                             </div>
-                            <span>{{ elem.title }}</span>
+                            <span>{{ elem.author}} - {{ elem.title }}</span>
                         </div>
                         {% endfor %}
-
-
                     </div>
                 </div>
             </div>
