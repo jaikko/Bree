@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="{% static 'store/js/index.js' %}"></script>
+    <script src="{% static 'store/js/menu.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'store/css/index.css' %}">
+
+</head>
+
+<body>
+    {% csrf_token %}
+    <!-- <div class="img-container">
+        <img src="{% static 'store/img/logo.png' %}">
+    </div> -->
+
+    <body>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'store/img/logo.png' %}">
+            </div>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-links">
+                <div class="links-container">
+                    <li><a href="#">Accueil</a></li>
+                    <li id="category"><a href="#">Categorie</a>
+                        <ul class="category-list">
+                            {% for elem in categories %}
+                            <li><a href="#">{{elem.name}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li><a href="#">Mon compte</a></li>
+                    <li><a href="#">A propos</a></li>
+                </div>
+            </ul>
+        </nav>
+
+        {% block content %} {% endblock %}
+    </body>
+
+</html>

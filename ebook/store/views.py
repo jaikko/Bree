@@ -14,4 +14,5 @@ def index(request):
     req = requests.get("http://127.0.0.1:8000/user/", headers=hed).json()
     
     books = requests.get("http://127.0.0.1:8000/book/", headers=hed).json()
-    return render(request, 'store/index.html', {'books': books})
+    categories = requests.get("http://127.0.0.1:8000/category/", headers=hed).json()
+    return render(request, 'store/index.html', {'books': books, 'categories': categories})
