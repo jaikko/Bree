@@ -1,17 +1,5 @@
 $(document).ready(function() {
 
-    //Hide an show ul
-    $('#category').on('click', function(e) {
-        e.stopPropagation();
-        console.log($('.category-list').css('display'));
-        if ($('.category-list').css('display') == "block") {
-            $('.category-list').hide();
-
-        } else {
-            $('.category-list').show();
-        }
-    });
-
     // Get Books by name or title 
     $(".searchButton").click(function() {
         var inputValue = $(".searchTerm").val().trim();
